@@ -82,4 +82,4 @@ foreach ($labels as $label) {
 
 }
 $myJSON = json_encode($myObj);
-//print($myJSON);
+print($myJSON);
