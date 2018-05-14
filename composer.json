@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jordikroon/google-vision": "^1.7"
+    }
+}
