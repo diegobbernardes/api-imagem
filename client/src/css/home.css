@@ -1,0 +1,50 @@
+#home .wrapper{
+    width: 100%;
+    max-width: 440px;
+}
+#home .titulo{
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    color: white;
+    transform: translate(0,-150%);
+    text-align: center;
+}
+#home .wrapper > div{
+    position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 100%;
+    outline-color: transparent;
+}
+#home .wrapper > div:hover{
+    outline-color: transparent;
+}
+#home .wrapper input{
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    padding: 7px 0 7px 20px;
+}
+#home .wrapper > div > div{
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+#home .wrapper > div > div > div{
+    padding: 5px 0 5px 10px;
+}
+#home .wrapper > div:before{
+    content:"\e003";
+    position:absolute;
+    top:54%;
+    right: 10px;
+    transform: translate(0,-50%);
+    display:inline-block;
+    font-family:'Glyphicons Halflings';
+    font-style:normal;
+    font-weight:400;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}

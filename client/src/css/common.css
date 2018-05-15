@@ -1,0 +1,22 @@
+.content{
+    position: relative;
+    top: 56px;
+    height: calc(100vh - 56px);
+    background-image: url(../images/bg-home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+}
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    animation: movepesquisa 1s .3s;
+}
+@keyframes movepesquisa {
+    0% {top: 45%; opacity:0;}
+    100% {top: 50%; opacity:1;}
+}

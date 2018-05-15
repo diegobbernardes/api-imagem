@@ -1,0 +1,69 @@
+nav{
+	padding: 0 20px;  
+}
+nav.bg-dark{
+	background-color: #5360ad !important;
+}
+nav .brand-logo,
+nav ul a{
+	font-weight: 500;
+}
+#menu-busca .bloco{
+	width: 50%;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	font-weight: 500;
+	cursor: pointer;
+	line-height: 60px;
+	position: relative;
+	z-index: 10;
+}
+#menu-busca .bloco.selecionado{
+	background-color: rgba(0,0,0,0.1);
+}
+#menu-busca .bloco.selecionado:before{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 15px solid #5360ad;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	bottom: -30px;
+	left: 50%;
+	transform: translate(-50%,0);	
+	
+}
+#menu-busca .bloco:hover{
+	background-color: rgba(0,0,0,0.1);
+	transition: background-color .3s;
+}
+.conteudo {
+  	margin: 50px auto 0;
+	width: 80%;
+	max-width: 600px;
+	height: 500px; 
+	position: relative;
+	z-index: 1;
+}
+.conteudo .wrapper{
+	height: 100%;
+	border: 2px solid rgba(232,234,246,.4);
+}
+.conteudo .wrapper .wrapper-blocos .bloco:nth-child(1){
+	border-right: 2px solid rgba(232,234,246,.4);
+}
+.conteudo .wrapper-blocos{
+  	height: 100%;
+ 	display: none;
+}
+.conteudo .wrapper-blocos.show{
+ 	display: block;
+}
+.conteudo .wrapper-blocos .bloco{
+	height: 100%;
+	width: 50%;
+	float: left;
+}
