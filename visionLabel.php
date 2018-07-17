@@ -2,6 +2,7 @@
 
 namespace Vision;
 //error_reporting(0);
+$PDO;
 if(isset($_SERVER["HTTP_ORIGIN"]))
 {
     // You can decide if the origin in $_SERVER['HTTP_ORIGIN'] is something you want to allow, or as we do here, just allow all
@@ -72,14 +73,24 @@ $response = $vision->request(
 //recebendo as categorias´.
 $labels = $response->getLabelAnnotations();
 
+$PDO = new \PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_a240fb0bf187ac6; charset=UTF8', 'b6bd418f4f2cf7', 'f7c43c31'); //Conexão
+$PDO->setAttribute( \PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION );
+
 //iterando as categorias e imprimindo na tela os resultados
 $i = 0;
 foreach ($labels as $label) {	
-	$teste = $label->getDescription();
-	$myObj[$i]->produto = $traduz->translate($source, $target, $teste);
-    //print_r($i."-".$label->getDescription().'<br>') ;
-	$i= $i + 1;
+    $teste = $label->getDescription();
 
+    $traduzido = $traduz->translate($source, $target, $teste);
+
+    $sth = $PDO->prepare("SELECT * FROM heroku_a240fb0bf187ac6.ingredientes where ingrediente like '%$traduzido%';");
+    $sth->execute();
+    if ($sth->rowCount() > 0) {
+        $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
+        $myObj[$i]->produto = $result;
+        $i= $i + 1;
+    }
+    //print_r($i."-".$label->getDescription().'<br>') ;
 }
 $myJSON = json_encode($myObj);
 print($myJSON);
