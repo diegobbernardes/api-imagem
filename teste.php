@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'uploaded_file' => curl_file_create($tmpfile, $_FILES['image']['type'], $filename)
     );
 
-    echo  CallAPI("POST","http://localhost/api-imagem/visionLabel.php", $data);
+    echo  CallAPI("POST","https://projeto-vision.herokuapp.com/visionLabel.php", $data);
 
 }
 ?>
